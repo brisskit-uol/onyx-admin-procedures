@@ -1,0 +1,21 @@
+uk.org.briccs.onyxexport.OnyxData2Pdo$ProcessException: Something wrong with enumerated variable file:/home/jeff/ws-brisskit/onyx-procedures-jl-testdatagen/procedures/work/test-01/d-refined-metadata-enums/age.xml
+	at uk.org.briccs.onyxexport.OnyxData2Pdo.getEnumeratedVariableDocument(OnyxData2Pdo.java:1859)
+	at uk.org.briccs.onyxexport.OnyxData2Pdo.buildEnumeratedCode(OnyxData2Pdo.java:1758)
+	at uk.org.briccs.onyxexport.OnyxData2Pdo.buildFact_GeneratedEnumeration(OnyxData2Pdo.java:1358)
+	at uk.org.briccs.onyxexport.OnyxData2Pdo.buildObservations(OnyxData2Pdo.java:1034)
+	at uk.org.briccs.onyxexport.OnyxData2Pdo.buildPatientDataObject(OnyxData2Pdo.java:418)
+	at uk.org.briccs.onyxexport.OnyxData2Pdo.exec(OnyxData2Pdo.java:326)
+	at uk.org.briccs.onyxexport.OnyxData2Pdo.main(OnyxData2Pdo.java:279)
+Caused by: java.io.FileNotFoundException: /home/jeff/ws-brisskit/onyx-procedures-jl-testdatagen/procedures/work/test-01/d-refined-metadata-enums/age.xml (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+	at org.apache.xmlbeans.impl.schema.SchemaTypeLoaderBase.parse(SchemaTypeLoaderBase.java:248)
+	at uk.org.briccs.onyxmetadata.stagetwo.enumeratedconcept.beans.EnumeratedVariableDocument$Factory.parse(Unknown Source)
+	at uk.org.briccs.onyxexport.OnyxData2Pdo.getEnumeratedVariableDocument(OnyxData2Pdo.java:1854)
+	... 6 more
+
+	
+	
+	
+/home/jeff/ws-brisskit/onyx-export2ontology-jl-testdatagen/src/test/resources/b-metadata
+/home/jeff/ws-brisskit/export2ontology-jl-testdatagen/src/test/resources/b-metadata

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+  <id></id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>true</includeBaseDirectory>
+  <dependencySets>
+	<dependencySet>
+		<outputDirectory>lib</outputDirectory>
+		<useProjectArtifact>false</useProjectArtifact>
+		<useTransitiveDependencies>true</useTransitiveDependencies>
+		<excludes></excludes>		
+	</dependencySet>
+  </dependencySets>
+  <files>
+  	<file>
+    	<source>procedures/README</source>
+    	<destName>README</destName>	
+    </file>
+  </files>
+  <fileSets>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/civicrm</directory> 
+ 		<outputDirectory>bin/civicrm</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/common</directory> 
+ 		<outputDirectory>bin/common</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/i2b2-data-prep</directory> 
+ 		<outputDirectory>bin/i2b2-data-prep</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/bin/i2b2-transfer-metadata</directory> 
+ 		<outputDirectory>bin/i2b2-transfer-metadata</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/bin/i2b2-participant-upload</directory> 
+ 		<outputDirectory>bin/i2b2-participant-upload</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+       <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/perl</directory> 
+ 		<outputDirectory>bin/perl</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/testdata-extraction</directory> 
+ 		<outputDirectory>bin/testdata-extraction</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/cron-export-process</directory> 
+ 		<outputDirectory>bin/cron-export-process</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/bin/utility</directory> 
+ 		<outputDirectory>bin/utility</outputDirectory>
+ 		<fileMode>0774</fileMode>
+    </fileSet>
+    <fileSet>
+    	<!-- includes  -->
+ 		<directory>${basedir}/procedures/endorsed-lib</directory> 
+ 		<outputDirectory>endorsed-lib</outputDirectory>
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/config</directory> 
+ 		<outputDirectory>config</outputDirectory>
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/defined-ontologies</directory> 
+ 		<outputDirectory>defined-ontologies</outputDirectory>
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/docs</directory> 
+ 		<outputDirectory>docs</outputDirectory>
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/licences</directory> 
+ 		<outputDirectory>licences</outputDirectory>
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/work</directory> 
+ 		<outputDirectory>work</outputDirectory>
+ 		<excludes>
+  			<exclude>**/*</exclude>
+		</excludes>		
+    </fileSet>
+    <fileSet>
+    	<!--  -->
+ 		<directory>${basedir}/procedures/xslt</directory> 
+ 		<outputDirectory>xslt</outputDirectory>
+    </fileSet>
+  </fileSets>
+</assembly>

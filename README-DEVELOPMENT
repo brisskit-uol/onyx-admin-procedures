@@ -1,0 +1,28 @@
+#===============================================================================#
+#            Command line tools for administering an Onyx project               #
+#===============================================================================#
+
+DEVELOPMENT CONSIDERATIONS: Inspect the POM.
+===========================================
+There is a production profile and a development profile.
+The build is production by default.
+Look at the enironment.type property setting within the pom, 
+which is used to produce two artifacts (development and production versions).
+Please note that at December 2012 there were no differences between a
+development and a production version. However, it is conceivable that in future
+the development version could be configured to do things not desirable within
+a production environment; eg: drop databases.
+
+To install or deploy, please use the mvn-*.sh scripts:
+
+(a) mvn-install-dev.sh
+(b) mvn-install-prod.sh
+(c) mvn-deploy-dev.sh
+(d) mvn-deploy-prod.sh
+
+(a) and (b) install to your local maven repository
+(c) and (d) deploy to the Brisskit maven repository.
+
+You need authorisation for (c) and (d); ie: an OS account on the machine
+hosting the Brisskit maven repo plus (for convenience) a public/private
+key setup. 

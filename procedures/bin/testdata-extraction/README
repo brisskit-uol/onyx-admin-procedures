@@ -1,0 +1,13 @@
+!!!!!!!!!!!!!!!!!!
+!!!  BE AWARE  !!!
+!!!!!!!!!!!!!!!!!!
+
+The test data extraction scripts should ONLY EVER be executed in their own job environment.
+
+For example, consider this invocation:
+
+extract-testdata-for-ws.sh TEST-JOB onyxexport.zip -bid=demo-0001
+
+Where TEST-JOB is the job name. Do NOT share this job name with any executions that
+derive live PDO data for upload. This is because the test data extraction process
+scrambles data in the unzipped export file!!!!

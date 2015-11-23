@@ -1,0 +1,42 @@
+#===============================================================================#
+#            Command line tools for administering an Onyx project               #
+#===============================================================================#
+
+PREREQUISITES.
+==============
+If you have Onyx installed, then the prerequisites are almost certainly present.
+Other run-time dependencies are held within the lib directory.
+
+QUICK START.
+============
+1. Unzip this package into the Onyx install directory.
+2. Edit the set.sh file within the brisskit bin/global directory of the admin package.
+   'Source' the set.sh file at the start of any shell session.
+   (There should be no need to do this as sudo or root)
+   Use "source ./set.sh" or ". ./set.sh" at the command line or within a composition script.
+   Remember, if you execute any script as sudo, then you must inherit the environment variables; eg:
+   > sudo -E ./3-onyx2metadata.sh job-20130214
+3. You must also edit the script bin/cron-export-process/process-export.sh which runs as root
+   via a cron job and therefore needs a different approach than the above for environment variables.
+   The first line should read something like:
+   source /var/local/brisskit/onyx/set.sh
+   Edit this if your install directory is different from /var/local/brisskit/onyx
+3  Review configuration settings within the config directory.
+   Basically these files:
+   config.properties
+   defaults.sh
+   log4j.properties
+   export-metadata-config-nominal.xml
+   export-metadata-config-real.xml
+   
+   The relevance of the latter two depend upon whether you wish to
+   generate a nominal ontology (from an export file) or a research-based ontology.
+   
+5. The rough order of completion (by directories) of procedures:
+   i)  i2b2-data-prep (ontology aspects) : once, and then occasionally when required)
+   ii) i2b2-meta-upload : once, and then occasionally when required
+   ii) i2b2-data-prep (pdo aspects) : regular
+   iv) i2b2-participant-upload : regular
+   
+   civicrm loading of participant data into Onyx should be regular. 
+   It is not constrained by any of the above procedures.

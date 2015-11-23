@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.brisskit.app.onyx</groupId>
+	<artifactId>onyx-admin-procedures</artifactId>
+	<packaging>pom</packaging>
+	<name>Onyx Standard Procedures. For BRISSkit</name>
+	<version>1.0-RC1-${environment.type}</version>
+
+	<description>This project brings together a set of standard Onyx operating procedures for producing an appropriate Ontology and for processing Participant data from an export file.</description>
+
+	<!--+
+	    | The distributionManagement element is required for deploying an artifact to a remote repository.
+	    | The repo will align with the version number; ie: a SNAPSHOT version will deploy to our snapshots
+	    | repo whereas one without a SNAPSHOT within the version number will deploy to the releases repo.
+	    +-->
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<name>Brisskit Maven Snapshots</name>
+			<url>scpexe://maven.brisskit.org/var/local/brisskit/sonatype-work/nexus/storage/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>Brisskit Maven Releases</name>
+			<url>scpexe://maven.brisskit.org/var/local/brisskit/sonatype-work/nexus/storage/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<repositories>
+    	<repository>
+			<id>nexus</id>
+			<name>Brisskit Maven Repo</name>
+			<url>http://maven.brisskit.org/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+   </repositories>
+	
+	<properties>
+		<!--+
+		    | The default environment is production. Note: there is a development profile to overwrite these settings.
+		    | The defaults are this way around because the development profile has facilities to drop all sql artifacts.
+		    | This forces a user to request these explicitly. The profile name is also included in the version number. 
+		    + -->
+		<environment.type>production</environment.type>
+	</properties>
+	
+	<build>
+	
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>assembly/${environment.type}-bin.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.brisskit.app.onyx</groupId>
+			<artifactId>export2ontology</artifactId>
+			<version>1.0-RC1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.brisskit.app.onyx</groupId>
+			<artifactId>export2pdo</artifactId>
+			<version>1.0-RC1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.brisskit.app.onyx</groupId>
+			<artifactId>onyx-export-participant-compositor</artifactId>
+			<version>1.0-RC1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.brisskit.app.utils</groupId>
+			<artifactId>domutils</artifactId>
+			<version>1.0-RC1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.brisskit.app.utils</groupId>
+			<artifactId>config-merger</artifactId>
+			<version>1.0-RC1</version>
+		</dependency>
+		<dependency>
+			<groupId>oracle.jdbc</groupId>
+			<artifactId>ojdbc</artifactId>
+			<version>14</version>
+		</dependency>
+		<dependency>
+			<groupId>ms.jdbc</groupId>
+			<artifactId>sqljdbc</artifactId>
+			<version>2005</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.brisskit.app.i2b2</groupId>
+			<artifactId>importpdo</artifactId>
+			<version>1.0-RC1</version>
+		</dependency>
+		
+		<!--+
+			| This artifact is required for xslt stylesheets used for
+			| semantic comparisons of metadata.
+			| The stylesheets should be unzipped into the procedures/xslt directory
+			+-->
+		<dependency>
+  			<groupId>org.brisskit.app.utils</groupId>
+  			<artifactId>metadata-sorting-stylesheets</artifactId>
+  			<version>1.0-RC1</version>
+		</dependency>
+	
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>production</id>
+			<activation>
+				<property>
+					<name>environment.type</name>
+					<value>production</value>
+				</property>
+			</activation>
+		</profile>
+	</profiles>
+
+
+	<url>https://www.brisskit.le.ac.uk/</url>
+</project>
