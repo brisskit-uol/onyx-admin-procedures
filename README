@@ -23,6 +23,5 @@ To install or deploy, please use the mvn-*.sh scripts:
 (a) and (b) install to your local maven repository
 (c) and (d) deploy to the Brisskit maven repository.
 
-You need authorisation for (c) and (d); ie: an OS account on the machine
-hosting the Brisskit maven repo plus (for convenience) a public/private
-key setup. 
+You need authorisation for (c) and (d); 
+ie: appropriate credentials in your Maven settings.xml file

@@ -16,7 +16,7 @@
 # to SVN once they have been set up.
 #
 #
-# Author: Jeff Lusted (jl99@leicester.ac.uk)
+# Author: Jeff Lusted (jeff.lusted@gmail.com)
 #-----------------------------------------------------------------------------------------------
 
 #===========================================================================
